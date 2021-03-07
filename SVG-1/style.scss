@@ -1,0 +1,79 @@
+
+@mixin func {
+    animation: wheel 1.5s linear infinite;
+    transform-origin: center;// center of svg
+    transform-box: fill-box;
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* animation: animation-name animation-duration animation-timing-function 
+animation-delay animation-iteration-count animation-fill-mode; */
+
+#man-bike
+{
+animation: man 1s ease-in-out infinite ;
+animation-direction: alternate;
+transform-origin: bottom;
+}
+
+#right-wheel,#left-wheel
+{
+    @include func();
+}
+
+#hat
+{
+    animation: hat 1s ease-in-out infinite ;
+    animation-direction: alternate;
+    transform-origin: center;// center of svg
+    transform-box: fill-box;
+}
+
+@keyframes wheel
+{    
+    from
+    {
+        transform: rotate(0deg);
+    }
+    to
+    {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes man
+{
+    from
+    {
+        transform: rotateX(0deg);
+    }
+
+    to{
+        transform: rotateX(20deg);
+    }
+}
+
+@keyframes hat
+{
+    from
+    {
+        transform:  rotate(0deg);
+    }
+
+    to
+    {
+        transform: rotate(10deg);
+    }
+}
